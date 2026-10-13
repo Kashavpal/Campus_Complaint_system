@@ -1,0 +1,120 @@
+*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#17202a;font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.top{height:64px;background:#fff;border-bottom:1px solid #e7e9ed;display:flex;align-items:center;justify-content:space-between;padding:0 5vw}.top a{color:#17202a;text-decoration:none}.brand{font-weight:800;letter-spacing:-.02em}.top nav{display:flex;gap:20px}.container{max-width:1100px;margin:auto;padding:42px 24px}.hero{padding:70px 0 46px;max-width:720px}.hero h1{font-size:clamp(42px,7vw,76px);line-height:.98;letter-spacing:-.055em;margin:14px 0 24px}.hero p{font-size:19px;color:#66707d;max-width:600px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.15em;color:#68717c}.button,.small{display:inline-block;border:0;border-radius:10px;background:#17202a;color:#fff!important;padding:11px 17px;text-decoration:none;cursor:pointer}.small{padding:7px 10px;font-size:12px}.cards,.stats,.grid2,.detailgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.cards div,.stats div,.panel,.auth,.formpage,.empty{background:#fff;border:1px solid #e4e7eb;border-radius:16px;padding:22px}.cards span,.stats span{display:block;color:#707986;margin-top:4px}.auth,.formpage{max-width:680px;margin:25px auto}.auth{max-width:440px}.auth h1,.formpage h1,.pagehead h1{margin:6px 0 10px;letter-spacing:-.04em}.muted{color:#6d7682}.pagehead{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.list{display:grid;gap:10px}.item{background:#fff;border:1px solid #e4e7eb;border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;color:inherit;text-decoration:none}.item span{display:block;color:#6d7682}.pill{border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800}.red{background:#fee2e2;color:#991b1b}.yellow{background:#fef3c7;color:#92400e}.green{background:#dcfce7;color:#166534}.blue{background:#dbeafe;color:#1e40af}.status{font-size:12px!important;margin-top:5px}.stats{grid-template-columns:repeat(4,1fr);margin-bottom:18px}.stats b{font-size:28px}.panel{margin:18px 0}.panel h2,.panel h3{margin-top:0}.grid2{grid-template-columns:repeat(2,1fr)}label{display:block;font-weight:650;margin:10px 0}input,select,textarea{display:block;width:100%;margin-top:6px;border:1px solid #d8dde3;border-radius:9px;padding:11px;background:#fff;font:inherit}textarea{resize:vertical}.verify{background:#f1f5f9;border-radius:12px;padding:15px;margin:16px 0}.timeline{border-left:2px solid #dce1e6;padding-left:20px}.step{position:relative;margin-bottom:20px}.step:before{content:'';position:absolute;left:-27px;top:7px;width:10px;height:10px;background:#17202a;border-radius:50%}.step span{display:block;color:#7a838d;font-size:12px}.detailgrid{grid-template-columns:1fr 1fr}.table,.audit{display:grid}.row,.audit div{display:grid;grid-template-columns:2fr 1fr 1fr 2fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #eef0f2}.row small{display:block;color:#77808b}.alert{padding:12px 15px;border-radius:10px;margin-bottom:15px;background:#e2e8f0}.alert.success{background:#dcfce7}.alert.danger{background:#fee2e2}.alert.warning{background:#fef3c7}@media(max-width:760px){.cards,.stats,.grid2,.detailgrid{grid-template-columns:1fr}.pagehead,.item{align-items:flex-start;gap:12px}.item{flex-direction:column}.row{grid-template-columns:1fr}.hero{padding-top:35px}.container{padding:28px 16px}}
+
+/* Refined motion and notification UI */
+@keyframes riseIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bellPulse{0%,100%{transform:rotate(0)}25%{transform:rotate(10deg)}75%{transform:rotate(-8deg)}}
+.container,.panel,.item,.card,.notification-card{animation:riseIn .28s ease-out both}
+.item,.panel,.card,.notification-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.item:hover,.card:hover,.notification-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px #17202a10;border-color:#cbd5e1}
+.bell{font-weight:650}.bell:hover{animation:bellPulse .35s ease-in-out}
+.notification-list{display:grid;gap:10px}
+.notification-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e4e7eb;border-radius:14px;padding:18px}
+.notification-card p{margin:5px 0;color:#586373}.notification-card small{color:#7b8490}
+.notification-card.unread{border-left:4px solid #2563eb}
+.notification-dot{width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:#9ca3af;margin-top:7px}
+.notification-card.unread .notification-dot{background:#2563eb}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Accessibility and motion polish */
+button,a,.item,.panel,.notification-card{transition:transform .16s ease,box-shadow .16s ease,background-color .16s ease,border-color .16s ease}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #7aa7e8;outline-offset:2px}
+.item:hover,.notification-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px #17202a12}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+.overdue{color:#b42318;font-size:.75rem;letter-spacing:.04em;font-weight:800}
+
+
+/* Login password visibility control */
+.password-field{position:relative;display:flex;align-items:center;margin-top:6px;margin-bottom:14px}
+.password-field input{padding-right:48px;margin:0}
+.password-toggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:8px;background:transparent;color:#586373;cursor:pointer}
+.password-toggle:hover{background:#eef2f6;color:#17202a}
+.password-toggle:focus-visible{outline:3px solid #7aa7e8;outline-offset:1px}
+.eye-icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== Extra animations (v2) ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@keyframes popIn{0%{opacity:0;transform:scale(.94)}100%{opacity:1;transform:scale(1)}}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,24px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-26px,30px)}}
+@keyframes redPulse{0%{box-shadow:0 0 0 0 #dc262655}70%{box-shadow:0 0 0 9px #dc262600}100%{box-shadow:0 0 0 0 #dc262600}}
+@keyframes dotPulse{0%{box-shadow:0 0 0 0 #17202a55}70%{box-shadow:0 0 0 8px #17202a00}100%{box-shadow:0 0 0 0 #17202a00}}
+@keyframes lineGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes shine{from{background-position:-200% 0}to{background-position:200% 0}}
+
+/* soft floating background shapes */
+body{position:relative;overflow-x:hidden}
+body:before,body:after{content:'';position:fixed;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none}
+body:before{width:380px;height:380px;background:#dbeafe;top:-80px;right:-60px;animation:floatA 14s ease-in-out infinite}
+body:after{width:320px;height:320px;background:#ede9fe;bottom:-90px;left:-60px;animation:floatB 17s ease-in-out infinite}
+
+/* header + nav */
+.top{animation:slideDown .4s ease-out both;position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);background:#ffffffe6}
+.top nav a{position:relative;padding:4px 0}
+.top nav a:after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:100%;background:#17202a;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.top nav a:hover:after{transform:scaleX(1)}
+.brand{transition:letter-spacing .25s ease}.brand:hover{letter-spacing:.01em}
+
+/* hero entrance (staggered) */
+.hero .eyebrow,.hero h1,.hero p,.hero .button{animation:fadeUp .6s ease-out both}
+.hero .eyebrow{animation-delay:.05s}.hero h1{animation-delay:.15s}.hero p{animation-delay:.28s}.hero .button{animation-delay:.4s}
+
+/* staggered cards / stats / list rows */
+.cards div,.stats div{animation:fadeUp .55s ease-out both;transition:transform .2s ease,box-shadow .2s ease}
+.cards div:nth-child(1),.stats div:nth-child(1){animation-delay:.15s}
+.cards div:nth-child(2),.stats div:nth-child(2){animation-delay:.25s}
+.cards div:nth-child(3),.stats div:nth-child(3){animation-delay:.35s}
+.stats div:nth-child(4){animation-delay:.45s}
+.cards div:hover,.stats div:hover{transform:translateY(-4px);box-shadow:0 12px 28px #17202a14}
+.list .item,.notification-list .notification-card{animation:fadeUp .45s ease-out both}
+.list .item:nth-child(1),.notification-list .notification-card:nth-child(1){animation-delay:.05s}
+.list .item:nth-child(2),.notification-list .notification-card:nth-child(2){animation-delay:.1s}
+.list .item:nth-child(3),.notification-list .notification-card:nth-child(3){animation-delay:.15s}
+.list .item:nth-child(4),.notification-list .notification-card:nth-child(4){animation-delay:.2s}
+.list .item:nth-child(5),.notification-list .notification-card:nth-child(5){animation-delay:.25s}
+.list .item:nth-child(n+6),.notification-list .notification-card:nth-child(n+6){animation-delay:.3s}
+.row{transition:background-color .2s ease,padding-left .2s ease}
+.row:hover{background:#f6f8fb;padding-left:8px}
+
+/* login / form cards pop in */
+.auth,.formpage{animation:popIn .45s cubic-bezier(.2,.8,.3,1) both}
+.auth:has(.alert.danger),.auth:has(.alert.warning){animation:popIn .45s both,shake .4s .45s}
+
+/* buttons: lift, press, sheen */
+.button,.small{position:relative;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease}
+.button:hover,.small:hover{transform:translateY(-2px);box-shadow:0 8px 18px #17202a30;background:#2a3644}
+.button:active,.small:active{transform:translateY(0) scale(.97);box-shadow:none}
+.button:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,#ffffff40 50%,transparent 70%);background-size:200% 100%;background-position:-200% 0;pointer-events:none}
+.button:hover:after{animation:shine .8s ease}
+
+/* inputs */
+input,select,textarea{transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+input:focus,select:focus,textarea:focus{border-color:#2563eb;box-shadow:0 0 0 4px #2563eb1f;outline:0}
+
+/* alerts */
+.alert{animation:slideDown .4s ease-out both}
+
+/* priority pills */
+.pill{transition:transform .18s ease}.pill:hover{transform:scale(1.08)}
+.pill.red{animation:redPulse 2s infinite}
+.overdue{animation:redPulse 2s infinite;display:inline-block;padding:2px 6px;border-radius:6px}
+
+/* timeline: line grows, dots pop in one by one, latest step pulses */
+.timeline{position:relative;border-left:0}
+.timeline:before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:#dce1e6;transform-origin:top;animation:lineGrow .8s ease-out both}
+.step{animation:fadeUp .5s ease-out both}
+.step:nth-child(1){animation-delay:.1s}.step:nth-child(2){animation-delay:.25s}.step:nth-child(3){animation-delay:.4s}
+.step:nth-child(4){animation-delay:.55s}.step:nth-child(5){animation-delay:.7s}.step:nth-child(n+6){animation-delay:.85s}
+.step:before{animation:popIn .4s ease-out both;animation-delay:inherit;left:-26px}
+.step:last-child:before{animation:popIn .4s ease-out both,dotPulse 2s 1s infinite}
+
+/* notification unread dot + bell */
+.notification-card.unread .notification-dot{animation:dotPulse 2s infinite;box-shadow:0 0 0 0 #2563eb55}
+
+/* scroll reveal (added by JS) */
+.js-reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.js-reveal.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){body:before,body:after{animation:none}.js-reveal{opacity:1;transform:none}}

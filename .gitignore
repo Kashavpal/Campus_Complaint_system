@@ -1,0 +1,7 @@
+.env
+instance/*.sqlite3
+app/uploads/originals/*
+app/uploads/temp/*
+app/uploads/complaints/*
+__pycache__/
+.venv/
